@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<title>Language.js library demo</title>
+
+<style type="text/css">
+  body {
+    font-family: Tahoma, sans-serif;
+  }
+
+  textarea#input {
+    width: 600px;
+    height: 120px;
+    border: 3px solid #cccccc;
+    padding: 5px;
+  }
+
+  div#output {
+    color: #CC0000;
+  }
+</style>
+
+<h1>Language.js library demo</h1>
+
+<script src="./Language_lib/languageData.js" charset="utf-8"></script>
+<script src="./Language_lib/Language.js" charset="utf-8"></script>
+
+<p>Enter some text below to try this library:</p>
+
+<textarea id="input">Type some text here!</textarea>
+
+<div id="output"></div>
+
+<script charset="utf-8">
+var inputEl = document.getElementById('input'),
+    outputEl = document.getElementById('output');
+
+inputEl.addEventListener('keyup', function() {
+
+  guessLanguage.info(this.value, function(info) {
+    outputEl.textContent = 'Detected Language: ' + info[2] + " [" + info[0] + "]";
+  });
+
+}, false);
+</script>
