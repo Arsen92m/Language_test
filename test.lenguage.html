@@ -20,8 +20,6 @@
 </style>
 
 <h1>Language.js library demo</h1>
-
-<script src="./Language_lib/languageData.js" charset="utf-8"></script>
 <script src="./Language_lib/Language.js" charset="utf-8"></script>
 
 <p>Enter some text below to try this library:</p>
@@ -37,7 +35,7 @@ var inputEl = document.getElementById('input'),
 inputEl.addEventListener('keyup', function() {
 
   guessLanguage.info(this.value, function(info) {
-    outputEl.textContent = 'Detected Language: ' + info[2] + " [" + info[0] + "]";
+    outputEl.textContent = 'Detected Language: ' + info[1] + " [" + info[0] + "]";
   });
 
 }, false);
